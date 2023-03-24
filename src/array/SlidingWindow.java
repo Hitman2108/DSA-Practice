@@ -22,6 +22,7 @@ public class SlidingWindow {
 		}
 		
 		System.out.println(maxSum);
+		sc.close();
 	}
 
 }
