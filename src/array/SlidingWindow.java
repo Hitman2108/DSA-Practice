@@ -20,7 +20,6 @@ public class SlidingWindow {
 			sum+=arr[i]-arr[i-k];
 			maxSum=Math.max(maxSum, sum);
 		}
-		
 		System.out.println(maxSum);
 		sc.close();
 	}
