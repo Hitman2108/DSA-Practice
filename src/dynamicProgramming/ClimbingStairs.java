@@ -34,7 +34,7 @@ public class ClimbingStairs {
 		public static int getCount1(int n, int dp[]) {
 			if(n==0) return 1;
 			if(n<0) return 0;
-			
+			if(dp[n]!=0) return dp[n];
 			return dp[n]=getCount1(n-1,dp)+getCount1(n-2,dp) ;
 		}
 		
