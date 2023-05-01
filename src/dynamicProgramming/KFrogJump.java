@@ -44,7 +44,7 @@ public class KFrogJump {
 			if(n>=i)
 			{
 				int jumps=getMinEnergyLoss1(arr,n-i, k)+Math.abs(arr[n]-arr[n-i]);
-				minJumps=Math.min(minJumps, jumps);
+				minJumps=Math.min(minJumps,jumps);
 			}
 		}
 		
