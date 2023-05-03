@@ -15,7 +15,7 @@ public class TriangleMaxPathSum {
 		System.out.println(getMinPathSum(a,0,0));
 		System.out.println(getMinPathSum1(a,0,0,dp));
 		System.out.println(getMinPathSum2(a));
-//		System.out.println(getMinPathSum3(a));
+		System.out.println(getMinPathSum3(a));
 	}
 	
 	//Recursion
