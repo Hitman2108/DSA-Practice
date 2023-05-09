@@ -23,9 +23,12 @@ public class VariousSortingMethods {
 		System.out.println(bubbleSort(arr,n));
 		System.out.println(selectionSort(arr,n));
 		System.out.println(insertionSort(arr,n));
-		int temp[]=arr.clone();
-		mergeSort(temp,0,n-1);
-		System.out.println(Arrays.toString(temp));
+		int t1[]=arr.clone();
+		mergeSort(t1,0,n-1);
+		System.out.println(Arrays.toString(t1));
+		int t2[]=arr.clone();
+		quickSort(t2,0,n-1);
+		System.out.println(Arrays.toString(t2));
 	}
 	
 	public static void swap(int arr[], int x, int y) {
@@ -34,6 +37,7 @@ public class VariousSortingMethods {
 		arr[y]=temp;
 	}
 	
+	//bubbleSort
 	public static String bubbleSort(int arr[], int n) {
 		int temp[]=arr.clone();
 		for(int i=0; i<n; i++) {
@@ -46,6 +50,7 @@ public class VariousSortingMethods {
 		return Arrays.toString(temp);
 	}
 	
+	//selectionSort
 	public static String selectionSort(int arr[], int n) {
 		int temp[]=arr.clone();
 		for(int i=0; i<n-1; i++) {
@@ -61,6 +66,7 @@ public class VariousSortingMethods {
 		return Arrays.toString(temp);
 	}
 	
+	//insertionSort
 	public static String insertionSort(int arr[], int n) {
 		int temp[]=arr.clone();
 		for(int i=1; i<n; i++) {
@@ -76,6 +82,7 @@ public class VariousSortingMethods {
 		return Arrays.toString(temp);
 	}
 	
+	//mergeSort
 	public static void mergeSort(int arr[], int l, int h) {
 		if(l<h) {
 			int mid=(l+h)/2;
@@ -107,7 +114,28 @@ public class VariousSortingMethods {
 		for(int x=0; x<temp.length; x++) {
 			arr[l+x]=temp[x];
 		}
-		
+	}
+	
+	//quickSort
+	public static void quickSort(int arr[], int l, int h) {
+		if(l<h) {
+			int p=partition(arr,l,h);
+			quickSort(arr, l, p-1);
+			quickSort(arr, p+1, h);
+		}
+	}
+	
+	public static int partition(int arr[], int l, int h) {
+		int pivot=arr[h];
+		int i=l-1;
+		for(int j=l; j<h; j++) {
+			if(arr[j]<pivot) {
+				i++;
+				swap(arr,i,j);
+			}
+		}
+		swap(arr,i+1,h);
+		return (i+1);
 	}
 
 }
