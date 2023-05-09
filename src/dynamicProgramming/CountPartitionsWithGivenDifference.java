@@ -4,7 +4,7 @@ public class CountPartitionsWithGivenDifference {
 	
 	public static void main(String[] args) {
 		int arr[]=new int[] {5,2,6,4};
-		int n=arr.length;
+//		int n=arr.length;
 		int d=3;
 		int total=0;
 		for(int i: arr) total+=i;
