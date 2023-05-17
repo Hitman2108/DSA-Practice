@@ -2,6 +2,7 @@ package sorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -12,6 +13,14 @@ public class ComparatorClass {
 		list.add(new Point(5,2));
 		Point[] arr=new Point[] {new Point(5,2), new Point(7,4), new Point(6,3)};
 		Arrays.sort(arr);
+		Comparator<Point> cmp=new Comparator<>() {
+			@Override
+			public int compare(Point o1, Point o2) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+		};
+		Arrays.sort(arr, cmp);
 		for(Point p: arr)
 			System.out.println(p);
 	}
