@@ -3,22 +3,27 @@ package dynamicProgramming;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class LongestCommonSubsequence {
+public class MinimumInsertionToMakeStringPalindrome {
 	
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		String str1=sc.nextLine();
-		String str2=sc.nextLine();
+		String str2="";
 		int n=str1.length();
+		for(int i=0; i<n; i++) {
+			str2=str1.charAt(i)+str2;
+		}
+		System.out.println(str1);
+		System.out.println(str2);
 		int m=str2.length();
 		int dp[][]=new int[n+1][m+1];
 		for(int i[]: dp) {
 			Arrays.fill(i, -1);
 		}
-		System.out.println(getLengthOfLongestCommonSubsequence(n,m,str1,str2));
-		System.out.println(getLengthOfLongestCommonSubsequence(n,m,str1,str2,dp));
-		System.out.println(getLengthOfLongestCommonSubsequence(str1,str2));
-		System.out.println(getLengthOfLongestCommonSubsequenceSpaceOptimization(str1,str2));
+		System.out.println(n-getLengthOfLongestCommonSubsequence(n,m,str1,str2));
+		System.out.println(n-getLengthOfLongestCommonSubsequence(n,m,str1,str2,dp));
+		System.out.println(n-getLengthOfLongestCommonSubsequence(str1,str2));
+		System.out.println(n-getLengthOfLongestCommonSubsequenceSpaceOptimization(str1,str2));
 		printLCS(dp, str1, str2);
 		sc.close();
 	}

@@ -3,7 +3,7 @@ package dynamicProgramming;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class LongestCommonSubsequence {
+public class MinimumOperationsToConvertStringToAnotherString {
 	
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
@@ -15,10 +15,10 @@ public class LongestCommonSubsequence {
 		for(int i[]: dp) {
 			Arrays.fill(i, -1);
 		}
-		System.out.println(getLengthOfLongestCommonSubsequence(n,m,str1,str2));
-		System.out.println(getLengthOfLongestCommonSubsequence(n,m,str1,str2,dp));
-		System.out.println(getLengthOfLongestCommonSubsequence(str1,str2));
-		System.out.println(getLengthOfLongestCommonSubsequenceSpaceOptimization(str1,str2));
+		System.out.println(n+m-2*getLengthOfLongestCommonSubsequence(n,m,str1,str2));
+		System.out.println(n+m-2*getLengthOfLongestCommonSubsequence(n,m,str1,str2,dp));
+		System.out.println(n+m-2*getLengthOfLongestCommonSubsequence(str1,str2));
+		System.out.println(n+m-2*getLengthOfLongestCommonSubsequenceSpaceOptimization(str1,str2));
 		printLCS(dp, str1, str2);
 		sc.close();
 	}
