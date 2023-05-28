@@ -30,9 +30,6 @@ public class LongestCommonSubstring {
 						col=j;
 					}
 				}
-				else {
-					dp[i][j]=0;
-				}
 			}
 		}
 		
