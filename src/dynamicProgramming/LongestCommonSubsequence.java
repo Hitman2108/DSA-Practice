@@ -76,11 +76,12 @@ public class LongestCommonSubsequence {
 		int n=str1.length();
 		int m=str2.length();
 		int prev[]=new int[m+1];
-	
+		String str="";
 		for(int ind1=1; ind1<=n; ind1++) {
 			int curr[]=new int[m+1];
 			for(int ind2=1; ind2<=m; ind2++) {
 				if(str1.charAt(ind1-1)==str2.charAt(ind2-1)) {
+					str+=str1.charAt(ind1-1);
 					curr[ind2]=1+prev[ind2-1];
 				}
 				else {
@@ -91,6 +92,8 @@ public class LongestCommonSubsequence {
 			}
 			prev=curr;
 		}
+		
+		System.out.println(str);
 		
 		return prev[m];
 	}
