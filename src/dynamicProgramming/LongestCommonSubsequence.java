@@ -19,7 +19,29 @@ public class LongestCommonSubsequence {
 		System.out.println(getLengthOfLongestCommonSubsequence(n,m,str1,str2,dp));
 		System.out.println(getLengthOfLongestCommonSubsequence(str1,str2));
 		System.out.println(getLengthOfLongestCommonSubsequenceSpaceOptimization(str1,str2));
+		printLCS(dp, str1, str2);
 		sc.close();
+	}
+	
+	//Printing LCS
+	public static void printLCS(int dp[][], String str1, String str2) {
+		int n=str1.length();
+		int m=str2.length();
+		String str="";
+		while(n>0 && m>0) {
+			if(str1.charAt(n-1)==str2.charAt(m-1)) {
+				str=str1.charAt(n-1)+str;
+				n--;
+				m--;
+			}
+			else if(dp[n-1][m]>dp[n][m-1]) {
+				n--;
+			}
+			else {
+				m--;
+			}
+		}
+		System.out.println(str);
 	}
 
 	//Recursion
@@ -54,7 +76,6 @@ public class LongestCommonSubsequence {
 		int n=str1.length();
 		int m=str2.length();
 		int dp[][]=new int[n+1][m+1];
-		
 		for(int ind1=1; ind1<=n; ind1++) {
 			for(int ind2=1; ind2<=m; ind2++) {
 				if(str1.charAt(ind1-1)==str2.charAt(ind2-1)) {
@@ -67,7 +88,6 @@ public class LongestCommonSubsequence {
 				}
 			}
 		}
-		
 		return dp[n][m];
 	}
 	

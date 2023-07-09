@@ -6,7 +6,7 @@ public class MazeObstacles {
 	
 	public static void main(String[] args) {
 //		Scanner sc=new Scanner(System.in);
-		int a[][]=new int[][] {{0,0,0}, {0,0,0}, {0,0,0}};
+		int a[][]={{0,0,0}, {0,0,0}, {0,0,0}};
 		int n=a.length;
 		int m=a[0].length;
 		int dp[][]=new int[n][m];
